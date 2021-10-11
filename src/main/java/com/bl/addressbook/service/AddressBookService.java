@@ -36,11 +36,17 @@ public class AddressBookService {
         String mobileNo = scanner.nextLine();
         System.out.print("Enter the Email ID : ");
         String emailId = scanner.nextLine();
+        for(int i=0;i<arrayList.size();i++){
+            if(arrayList.get(i).getFirstName().equals(firstName))
+            {
+                System.out.println(" Sorry Name is already Exist :");
 
+            }
+        }
         arrayList.add(new Contact(firstName, lastName, address, city, state, zipCode, mobileNo, emailId));
         System.out.println("Data added Successfully");
         System.out.println(arrayList.get(0));
-        showData();
+
     }
 
     public void showData() {
@@ -122,27 +128,6 @@ public class AddressBookService {
         }
     }
 
-    public void search() {
-        boolean found = false;
-        do {
-            System.out.println(" Enter the city to search :");
-            String city = scanner.nextLine();
-            System.out.println("_____________________________");
-            Iterator<Contact> it = arrayList.iterator();
-            while (it.hasNext()) {
-                Contact contact = it.next();
-                if (contact.getCity().equals(city)) {
-                    System.out.println(contact);
-                    found = true;
-                }
 
-
-                if (!found) {
-                    System.out.println(" city is not found");
-                }
-                break;
-            }
-        }while();
-    }
 
     }
