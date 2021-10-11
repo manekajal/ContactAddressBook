@@ -6,11 +6,12 @@ public class Contact {
     private String address;
     private String city;
     private String state;
-    private int zipCode;
-    private long mobileNo;
+    private String zipCode;
+    private String mobileNo;
+    private String  emailId;
 
 
-    public Contact(String firstName, String lastName, String address, String city, String state, int zipCode, long mobileNo) {
+    public Contact(String firstName, String lastName, String address, String city, String state, String zipCode, String  mobileNo, String emailId) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -18,7 +19,7 @@ public class Contact {
         this.state = state;
         this.zipCode = zipCode;
         this.mobileNo = mobileNo;
-
+        this.emailId=emailId;
     }
 
     public String getFirstName() {
@@ -41,11 +42,15 @@ public class Contact {
         return state;
     }
 
-    public int getZipCode() {
+    public String getZipCode() {
         return zipCode;
     }
-    public long getMobileNo() {
+    public String  getMobileNo() {
         return mobileNo;
+    }
+
+    public String getEmailId() {
+        return emailId;
     }
 
 
@@ -72,13 +77,17 @@ public class Contact {
         this.state = state;
     }
 
-    public void setZipCode(int zipCode) {
+    public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
-
-    public void setMobileNo(long mobileNo) {
+    public void setMobileNo(String  mobileNo) {
         this.mobileNo = mobileNo;
     }
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
+
+
 
     @Override
     public String toString() {
@@ -90,6 +99,7 @@ public class Contact {
                 ", state='" + state + '\'' +
                 ", zipCode=" + zipCode +
                 ", mobileNo=" + mobileNo +
+                ",emailId="  +emailId+
                 '}';
     }
 }
