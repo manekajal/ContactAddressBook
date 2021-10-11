@@ -129,27 +129,7 @@ public class AddressBookService {
         }
     }
 
-    public void search() {
-        boolean found = false;
 
-            System.out.println(" Enter the city to search :");
-            String city = scanner.nextLine();
-            System.out.println("_____________________________");
-            Iterator<Contact> it = arrayList.iterator();
-            while (it.hasNext()) {
-                Contact contact = it.next();
-                if (contact.getCity().equals(city)) {
-                    System.out.println(contact);
-                    found = true;
-                }
-
-
-                if (!found) {
-                    System.out.println(" city is not found");
-                }
-                break;
-            }
 
 
         }
-    }
