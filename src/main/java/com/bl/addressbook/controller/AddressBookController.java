@@ -25,7 +25,7 @@ public class AddressBookController {
             while (flag) {
 
                 System.out.println("Welcome to Address Book");
-                System.out.println("Enter 1 for add, 2 for edit, 3 for delete,4 for print, 5 for exit");
+                System.out.println("Enter 1 for add, 2 for edit, 3 for delete,4 for print, 5 for search, 6 for exit");
                 System.out.println("Enter your Choice :");
                 switch (scanner.nextInt()) {
                     case 1:
@@ -45,6 +45,10 @@ public class AddressBookController {
 
                         break;
                     case 5:
+                        addbook.search();
+                        System.out.println("________________");
+                        break;
+                    case 6:
                         flag = false;
                         break;
                 }
