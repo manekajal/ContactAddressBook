@@ -16,6 +16,7 @@ public class AddressBookService {
     }
 
     public void addData() {
+
         System.out.println("Enter all the details");
 
         System.out.print(" Enter First Name : ");
@@ -36,12 +37,18 @@ public class AddressBookService {
         String mobileNo = scanner.nextLine();
         System.out.print("Enter the Email ID : ");
         String emailId = scanner.nextLine();
-
+        for(int i=0;i<arrayList.size();i++) {
+            if (arrayList.get(i).getFirstName().equals(firstName)) {
+                System.out.println(" Sorry Name is already exist");
+                return;
+            }
+        }
         arrayList.add(new Contact(firstName, lastName, address, city, state, zipCode, mobileNo, emailId));
         System.out.println("Data added Successfully");
         System.out.println(arrayList.get(0));
-        showData();
+
     }
+
 
     public void showData() {
        System.out.println(arrayList);
@@ -124,7 +131,7 @@ public class AddressBookService {
 
     public void search() {
         boolean found = false;
-        do {
+
             System.out.println(" Enter the city to search :");
             String city = scanner.nextLine();
             System.out.println("_____________________________");
@@ -142,7 +149,7 @@ public class AddressBookService {
                 }
                 break;
             }
-        }while();
-    }
 
+
+        }
     }

@@ -29,6 +29,7 @@ public class AddressBookController {
                 System.out.println("Enter your Choice :");
                 switch (scanner.nextInt()) {
                     case 1:
+
                         addbook.addData();
                         System.out.println();
                         break;
