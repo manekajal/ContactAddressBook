@@ -25,6 +25,7 @@ public class AddressBookControllerMain {
             dictionary.put(name, addressBookController.addbook());
             sc.nextLine();
             System.out.println("The Dictionary is: " + dictionary);
+            System.out.println();
 
 
         }
