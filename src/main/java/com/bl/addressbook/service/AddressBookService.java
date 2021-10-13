@@ -5,13 +5,14 @@ import com.bl.addressbook.models.Contact;
 import java.awt.List;
 import java.util.*;
 
-public class AddressBookService {
+public class AddressBookService  {
     ArrayList<Contact> arrayList = new ArrayList<Contact>();
 
 
     Scanner scanner;
 
     public AddressBookService() {
+
         scanner = new Scanner(System.in);
     }
 
@@ -92,8 +93,8 @@ public class AddressBookService {
             if (contact.getFirstName().equals(firstName)) {
                 System.out.println("Enter all the details");
 
-
-
+                System.out.println("Enter the first name :");
+                String fname = scanner.nextLine();
 
                 System.out.print(" Enter Last Name : ");
                 String lastName = scanner.nextLine();

@@ -5,26 +5,23 @@ import com.bl.addressbook.service.AddressBookService;
 
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.Scanner;
+import java.util.*;
 
 public class AddressBookController {
 
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        ArrayList<Contact> arrayList = new ArrayList<Contact>();
 
 
-        boolean flag = true;
 
-        AddressBookService addbook = new AddressBookService();
+        public ArrayList<Contact>addbook() {
+            ArrayList<Contact>arrayList=new ArrayList<>();
 
-
+            boolean flag = true;
+            Scanner scanner = new Scanner(System.in);
             while (flag) {
 
-                System.out.println("Welcome to Address Book");
+                AddressBookService addbook = new AddressBookService();
                 System.out.println("Enter 1 for add, 2 for edit, 3 for delete,4 for print, 5 for exit");
                 System.out.println("Enter your Choice :");
                 switch (scanner.nextInt()) {
@@ -50,8 +47,11 @@ public class AddressBookController {
                         flag = false;
                         break;
                 }
-            }
 
+
+            }
+            return arrayList;
         }
-    }
+}
+
 
