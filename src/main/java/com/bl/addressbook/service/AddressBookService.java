@@ -2,8 +2,8 @@ package com.bl.addressbook.service;
 
 import com.bl.addressbook.models.Contact;
 
-import java.awt.List;
 import java.util.*;
+import java.util.stream.Stream;
 
 public class AddressBookService {
     ArrayList<Contact> arrayList = new ArrayList<Contact>();
@@ -144,17 +144,17 @@ public class AddressBookService {
         System.out.println(" Enter the city to search :");
         String city = scanner.nextLine();
         System.out.println(" Enter the state");
-        String state=scanner.nextLine();
+        String state = scanner.nextLine();
         System.out.println("_____________________________");
         Iterator<Contact> it = arrayList.iterator();
         while (it.hasNext()) {
             Contact contact = it.next();
-            if (contact.getCity().equals(city) ) {
+            if (contact.getCity().equals(city)) {
                 System.out.println(contact);
 
                 found = true;
             }
-            if(contact.getState().equals(state)){
+            if (contact.getState().equals(state)) {
                 System.out.println(contact);
 
                 found = true;
@@ -167,5 +167,29 @@ public class AddressBookService {
         }
 
 
+  //      public void viewCity();
+  //      {
+  //          System.out.println("Enter the City or State");
+   //        String  cityOrState = scanner.nextLine();
+  //          arrayList.stream()
+   //                 .map(Contact::getCity)
+   //                 .distinct()
+     //               .forEach(System.out::println);
+//
+
+  //      }
     }
+
+    public void viewCity(){
+        System.out.println("Enter the City or State");
+        String  cityOrState = scanner.nextLine();
+        List<Contact> contactList1 = new ArrayList<>();
+        arrayList.stream()
+                .map(Contact::getCity)
+                .distinct()
+                .forEach(System.out::println);
     }
+
+}
+
+    
