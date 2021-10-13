@@ -37,20 +37,31 @@ public class AddressBookService {
         System.out.print("Enter the Email ID : ");
         String emailId = scanner.nextLine();
         for(int i=0;i<arrayList.size();i++){
+
             if(arrayList.get(i).getFirstName().equals(firstName))
             {
                 System.out.println(" Sorry Name is already Exist :");
-
+                return;
             }
+
         }
         arrayList.add(new Contact(firstName, lastName, address, city, state, zipCode, mobileNo, emailId));
         System.out.println("Data added Successfully");
-        System.out.println(arrayList.get(0));
+
 
     }
 
     public void showData() {
-       System.out.println(arrayList);
+        for(int i =0 ;i<arrayList.size();i++){
+            System.out.println(arrayList.get(i).getFirstName());
+            System.out.println(arrayList.get(i).getLastName());
+            System.out.println(arrayList.get(i).getAddress());
+            System.out.println(arrayList.get(i).getCity());
+            System.out.println(arrayList.get(i).getZipCode());
+            System.out.println(arrayList.get(i).getState());
+            System.out.println(arrayList.get(i).getMobileNo());
+            System.out.println(arrayList.get(i).getEmailId());
+        }
 
     }
 
@@ -91,8 +102,8 @@ public class AddressBookService {
             if (contact.getFirstName().equals(firstName)) {
                 System.out.println("Enter all the details");
 
-
-
+                System.out.print(" Enter First Name : ");
+                String fName = scanner.nextLine();
 
                 System.out.print(" Enter Last Name : ");
                 String lastName = scanner.nextLine();
